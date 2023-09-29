@@ -15,7 +15,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     {% block css %} {% endblock %}
+
 </head>
 
 <body>
@@ -44,7 +47,7 @@
                             <li>
                                 <a class="dropdown-item" href="{% url 'users:profile' user.id %}">Профиль</a>
                             </li>
-{#                            <li><a class="dropdown-item" href="{% url 'orders:orders_list' %}">Заказы</a></li>#}
+                            <li><a class="dropdown-item" href="#">Заказы</a></li>
                             {% if user.is_superuser or user.is_staff %}
                                 <li>
                                     <a class="dropdown-item" href="{% url 'admin:index' %}">
@@ -75,7 +78,6 @@
 {% block content %} {% endblock %}
 
 {% block footer %} {% endblock %}
-
 
 <!-- Bootstrap core JavaScript -->
 <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
